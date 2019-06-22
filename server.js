@@ -23,6 +23,9 @@ server.listen(PORT, function()
     })
 })
 
+server.get("/",function(req,res){
+    res.send("welcome to api")
+})
  server.post('/signup',UserController.signup)
  server.post('/login',UserController.login)
  server.post('/addproduct',ProductController.addproduct)
