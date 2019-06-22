@@ -7,7 +7,7 @@ var HotelController = require('./hotelcontroller')
 var BodyParser = require('body-parser');
 var Cors=require('cors')
 
-const PORT=7000 || process.env.PORT 
+const PORT=process.env.PORT || 7000 
 const MONGOURL="mongodb://test:test1234@ds117729.mlab.com:17729/coerproject"      //2nd
 
 var server= express()
