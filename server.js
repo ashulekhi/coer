@@ -8,7 +8,7 @@ var BodyParser = require('body-parser');
 var Cors=require('cors')
 
 const PORT=process.env.PORT || 7000 
-const MONGOURL= "mongodb+srv://sarthak:1234@cluster0-etlj7.mongodb.net/coerproject?retryWrites=true&w=majority" // "mongodb://test:test1234@ds117729.mlab.com:17729/coerproject"    //2nd
+const MONGOURL= "mongodb://admin:<password>@SG-sarthak-22362.servers.mongodirector.com:48907,SG-sarthak-22363.servers.mongodirector.com:48907,SG-sarthak-22364.servers.mongodirector.com:48907/admin?replicaSet=RS-sarthak-0&ssl=true" // "mongodb://test:test1234@ds117729.mlab.com:17729/coerproject"    //2nd
 
 var server= express()
 
