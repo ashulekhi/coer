@@ -41,5 +41,5 @@ server.get('/api/product/:id',ProductController.getProduct)
 
 server.get('/*', function(req,res) {
     
-    res.sendFile(path.join(__dirname+'/dist/frontend/index.html'));
+    res.sendFile(path.join(__dirname+'/dist/intro/index.html'));
     });
