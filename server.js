@@ -8,8 +8,7 @@ var BodyParser = require('body-parser');
 var Cors=require('cors')
 
 const PORT=process.env.PORT || 7000 
-const MONGOURL= " mongodb://user:1234@mongodb-3422-0.cloudclusters.net:20000,mongodb-3422-1.cloudclusters.net:20000,mongodb-3422-2.cloudclusters.net:20000/coerproject?authSource=admin&replicaSet=rs0"//mongodb://test:test1234@ds117729.mlab.com:17729/coerproject"    //2nd
-
+const MONGOURL= "mongodb+srv://sarthak123:sarthak@cluster0-jciqv.mongodb.net/test?retryWrites=true&w=majority"
 var server= express()
 
 server.use(BodyParser.json())
