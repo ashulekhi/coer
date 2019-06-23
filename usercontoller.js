@@ -12,13 +12,14 @@ exports.signup = function(req,res)
        {
        console.log("new user",newuser)
         
-       res.send({   
-        msg:'Signup sucess',
-        code:200
-    })
+       
       
        mailer.sendMail(req.body.email,"welcome","Sccessfull")
        .then(function(sucess){
+        res.send({   
+            msg:'Signup sucess',
+            code:200
+        }) 
      
        })
        },
@@ -129,7 +130,7 @@ exports.forgotpassword=function(req,res)
             }
 
             else if(user.length>0) {
-                console.log(user[0].pass)
+                console.log(user[0].password)
                     mailer.sendMail(user[0].email,user[0].password,"password recovery").then(function(info){
                         if(info){
                             console.log('information',info)
