@@ -12,14 +12,15 @@ exports.signup = function(req,res)
        {
        console.log("new user",newuser)
         
-       
+       res.send({   
+        msg:'Signup sucess',
+        code:200
+           
+    }) 
       
        mailer.sendMail(req.body.email,"welcome","Sccessfull")
        .then(function(sucess){
-        res.send({   
-            msg:'Signup sucess',
-            code:200
-        }) 
+    
      
        })
        },
