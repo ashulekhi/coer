@@ -9,6 +9,7 @@ var Cors=require('cors')
 
 const PORT=process.env.PORT || 7000 
 const MONGOURL= "mongodb+srv://sarthak123:sarthak@cluster0-jciqv.mongodb.net/test?retryWrites=true&w=majority"
+//const MONGOURL= "mongodb://localhost:27017/coerproject"
 var server= express()
 
 server.use(BodyParser.json())
