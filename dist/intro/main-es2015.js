@@ -63,7 +63,7 @@ module.exports = "<!-- \n<crausel></crausel>\n<login></login>\n\n<div class=\"ro
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<table class=\"table\">\n  <thread>\n    <tr>\n      <td></td>\n      <td>Product Name</td>\n      <td>Quantity</td>\n      <td>Product price</td>\n    </tr>\n  </thread>\n<tbody>\n  <tr *ngFor=\"let product of productslist\">\n    <td><img src=\"{{product.image}}\" alt=\"\" style=\"height:50px; width:50px\"></td>\n    <td>{{product.pname}}</td>\n    <td>{{product.qunatity}}</td>\n    <td>{{product.price}}</td>\n\n  </tr>\n</tbody>\n</table>"
+module.exports = "<table class=\"table\">\n  <thead>\n    <tr>\n      <td></td>\n      <td>Product Name</td>\n      <td>Quantity</td>\n      <td>Product price</td>\n    </tr>\n  </thead>\n<tbody>\n  <tr *ngFor=\"let product of productslist\">\n    <td><img src=\"{{product.image}}\" alt=\"\" style=\"height:50px; width:50px\"></td>\n    <td>{{product.pname}}</td>\n    <td>{{product.qunatity}}</td>\n    <td>{{product.price}}</td>\n\n  </tr>\n</tbody>\n</table>"
 
 /***/ }),
 
