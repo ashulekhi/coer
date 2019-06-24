@@ -56,6 +56,17 @@ module.exports = "<!-- \n<crausel></crausel>\n<login></login>\n\n<div class=\"ro
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/index.js!./src/app/cart/cart.component.html":
+/*!********************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/cart/cart.component.html ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<table class=\"table\">\n  <thread>\n    <tr>\n      <td></td>\n      <td>Product Name</td>\n      <td>Quantity</td>\n      <td>Product price</td>\n    </tr>\n  </thread>\n<tbody>\n  <tr *ngFor=\"let product of productslist\">\n    <td><img src=\"{{product.image}}\" alt=\"\" style=\"height:50px; width:50px\"></td>\n    <td>{{product.pname}}</td>\n    <td>{{product.qunatity}}</td>\n    <td>{{product.price}}</td>\n\n  </tr>\n</tbody>\n</table>"
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/index.js!./src/app/crausel/crausel.component.html":
 /*!**************************************************************************!*\
   !*** ./node_modules/raw-loader!./src/app/crausel/crausel.component.html ***!
@@ -140,7 +151,7 @@ module.exports = "<div (click)=\"showproduct()\" *ngIf='product' class=\"card\" 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\" style=\" padding:20px \">\n  \n  <div class=\"row\">\n      <div class=\"col-md-6\">\n          \n<img src=\"{{product.image}}\" alt=\"image not avilable\" style= \"width: 416px; height: 416px\" ><br>\n          <button  class=\"btn btn-outline-info col-md-5\" style=\"padding: 10px\" (click)=\"addToCart()\"  >Add to Cart</button>\n          <button class=\"btn btn-outline-success col-md-5\" style=\"padding: 10px\" >Buy now</button>\n      </div>\n      <div class=\"col-md-6\">\n\n          <table>\n              <tr>\n                  <td><h3>{{product.pname}}</h3></td>\n              </tr>\n              <tr>\n                  <td><h3>{{product.price}}</h3></td>\n              </tr>\n              <tr>\n\n                  <td><span><img src=\"https://rukminim1.flixcart.com/www/36/36/promos/06/09/2016/49f16fff-0a9d-48bf-a6e6-5980c9852f11.png?q=90\" width=\"18\" height=\"18\" class=\"_3Amlen\" ></span>No cost EMI ₹8,000/month. Standard EMI also availableView Plans</td></tr>\n\n              <tr>\n                  <td><span><img src=\"https://rukminim1.flixcart.com/www/36/36/promos/06/09/2016/c22c9fc4-0555-4460-8401-bf5c28d7ba29.png?q=90\" width=\"18\" height=\"18\" class=\"_3Amlen\" ></span> Bank Offer10% Instant Discount* with Axis Bank Credit and Debit CardsT&C</td></tr>\n              <tr>\n                  <td><span><img src=\"https://rukminim1.flixcart.com/www/36/36/promos/06/09/2016/c22c9fc4-0555-4460-8401-bf5c28d7ba29.png?q=90\" width=\"18\" height=\"18\" class=\"_3Amlen\" ></span>Bank Offer10% off* with Axis Bank Buzz Credit CardT&C</td></tr>\n              <tr>\n                  <td><span><img src=\"https://rukminim1.flixcart.com/www/36/36/promos/06/09/2016/c22c9fc4-0555-4460-8401-bf5c28d7ba29.png?q=90\" width=\"18\" height=\"18\" class=\"_3Amlen\" ></span>Free 16GB SD Card & Camera Bag with this DSLR</td></tr>\n              <tr><td class=\"row\"><span class=\"col-md-4\">Seller</span>\n                  <span class=\"col-md-4\"> RetailNet</span>\n              </td></tr>\n              <tr>\n                  <td class=\"row\">\n                      <span class=\"col-md-4\">Highlights</span>\n\n                      <td><span class=\"col-md-4\"></span><ul><li>Effective Pixels: 24.2 MP</li>\n                          <li><span class=\"col-md-4\">Sensor Type: CMOS</span></li>\n                          <li><span class=\"col-md-4\"></span>WiFi Available</li>\n                          <li><span class=\"col-md-4\"></span>1080p at 60p + Time-Lapse</li></ul>\n\n                  </td></tr>\n          </table>\n      </div>\n  </div>\n\n</div >"
+module.exports = "<div class=\"container\" style=\" padding:20px \">\n  \n  <div class=\"row\">\n      <div class=\"col-md-6\">\n          \n<img src=\"{{product.image}}\" alt=\"image not avilable\" style= \"width: 416px; height: 416px\" ><br>\n          <button  class=\"btn btn-outline-info col-md-5\" style=\"padding: 10px\" (click)=\"addtocart()\"  >Add to Cart</button>\n          <button (click)=\"buynow()\"class=\"btn btn-outline-success col-md-5\" style=\"padding: 10px\" >Buy now</button>\n      </div>\n      <div class=\"col-md-6\">\n\n          <table>\n              <tr>\n                  <td><h3>{{product.pname}}</h3></td>\n              </tr>\n              <tr>\n                  <td><h3>{{product.price}}</h3></td>\n              </tr>\n              <tr>\n\n                  <td><span><img src=\"https://rukminim1.flixcart.com/www/36/36/promos/06/09/2016/49f16fff-0a9d-48bf-a6e6-5980c9852f11.png?q=90\" width=\"18\" height=\"18\" class=\"_3Amlen\" ></span>No cost EMI ₹8,000/month. Standard EMI also availableView Plans</td></tr>\n\n              <tr>\n                  <td><span><img src=\"https://rukminim1.flixcart.com/www/36/36/promos/06/09/2016/c22c9fc4-0555-4460-8401-bf5c28d7ba29.png?q=90\" width=\"18\" height=\"18\" class=\"_3Amlen\" ></span> Bank Offer10% Instant Discount* with Axis Bank Credit and Debit CardsT&C</td></tr>\n              <tr>\n                  <td><span><img src=\"https://rukminim1.flixcart.com/www/36/36/promos/06/09/2016/c22c9fc4-0555-4460-8401-bf5c28d7ba29.png?q=90\" width=\"18\" height=\"18\" class=\"_3Amlen\" ></span>Bank Offer10% off* with Axis Bank Buzz Credit CardT&C</td></tr>\n              <tr>\n                  <td><span><img src=\"https://rukminim1.flixcart.com/www/36/36/promos/06/09/2016/c22c9fc4-0555-4460-8401-bf5c28d7ba29.png?q=90\" width=\"18\" height=\"18\" class=\"_3Amlen\" ></span>Free 16GB SD Card & Camera Bag with this DSLR</td></tr>\n              <tr><td class=\"row\"><span class=\"col-md-4\">Seller</span>\n                  <span class=\"col-md-4\"> RetailNet</span>\n              </td></tr>\n              <tr>\n                  <td class=\"row\">\n                      <span class=\"col-md-4\">Highlights</span>\n\n                      <td><span class=\"col-md-4\"></span><ul><li>Effective Pixels: 24.2 MP</li>\n                          <li><span class=\"col-md-4\">Sensor Type: CMOS</span></li>\n                          <li><span class=\"col-md-4\"></span>WiFi Available</li>\n                          <li><span class=\"col-md-4\"></span>1080p at 60p + Time-Lapse</li></ul>\n\n                  </td></tr>\n          </table>\n      </div>\n  </div>\n\n</div >"
 
 /***/ }),
 
@@ -280,7 +291,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var apiurl = '/api/addproduct';
-//var apiurll =  'http://localhost:7000/allproducts'
+//var apiurl =  'http://localhost:7000/allproducts'
 var AddproductComponent = /** @class */ (function () {
     function AddproductComponent(http, toastr) {
         this.http = http;
@@ -431,6 +442,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _forgotpassword_forgotpassword_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./forgotpassword/forgotpassword.component */ "./src/app/forgotpassword/forgotpassword.component.ts");
 /* harmony import */ var _deleteaccount_deleteaccount_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./deleteaccount/deleteaccount.component */ "./src/app/deleteaccount/deleteaccount.component.ts");
 /* harmony import */ var _productdetails_productdetails_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./productdetails/productdetails.component */ "./src/app/productdetails/productdetails.component.ts");
+/* harmony import */ var _cart_cart_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./cart/cart.component */ "./src/app/cart/cart.component.ts");
 
 
 
@@ -441,6 +453,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
  //http client ke liye
+
 
 
 
@@ -464,7 +477,8 @@ var routes = [
     { path: 'deleteaccount', component: _deleteaccount_deleteaccount_component__WEBPACK_IMPORTED_MODULE_20__["DeleteAccountComponent"] },
     { path: 'productdetails', component: _productdetails_productdetails_component__WEBPACK_IMPORTED_MODULE_21__["ProductdetailsComponent"] },
     { path: 'forgotpassword', component: _forgotpassword_forgotpassword_component__WEBPACK_IMPORTED_MODULE_19__["ForgotpasswordComponent"] },
-    { path: 'product/:id', component: _productdetails_productdetails_component__WEBPACK_IMPORTED_MODULE_21__["ProductdetailsComponent"] }
+    { path: 'product/:id', component: _productdetails_productdetails_component__WEBPACK_IMPORTED_MODULE_21__["ProductdetailsComponent"] },
+    { path: "cart", component: _cart_cart_component__WEBPACK_IMPORTED_MODULE_22__["CartComponent"] }
 ];
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -485,6 +499,7 @@ var AppModule = /** @class */ (function () {
                 _forgotpassword_forgotpassword_component__WEBPACK_IMPORTED_MODULE_19__["ForgotpasswordComponent"],
                 _deleteaccount_deleteaccount_component__WEBPACK_IMPORTED_MODULE_20__["DeleteAccountComponent"],
                 _productdetails_productdetails_component__WEBPACK_IMPORTED_MODULE_21__["ProductdetailsComponent"],
+                _cart_cart_component__WEBPACK_IMPORTED_MODULE_22__["CartComponent"],
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -500,6 +515,79 @@ var AppModule = /** @class */ (function () {
         })
     ], AppModule);
     return AppModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/cart/cart.component.css":
+/*!*****************************************!*\
+  !*** ./src/app/cart/cart.component.css ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NhcnQvY2FydC5jb21wb25lbnQuY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/cart/cart.component.ts":
+/*!****************************************!*\
+  !*** ./src/app/cart/cart.component.ts ***!
+  \****************************************/
+/*! exports provided: CartComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CartComponent", function() { return CartComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+
+
+
+
+
+//const cartproductsapiurl="http://localhost:7000/api/cartitems"
+var cartproductsapiurl = "/api/cartitems";
+var CartComponent = /** @class */ (function () {
+    function CartComponent(http, toastr, router) {
+        var _this = this;
+        this.http = http;
+        this.toastr = toastr;
+        this.router = router;
+        if (localStorage.email) {
+            http.post(cartproductsapiurl, { email: localStorage.email }).subscribe(function (response) {
+                if (response["code"] == 200) {
+                    _this.productslist = response["productslist"];
+                }
+                else {
+                    toastr.error(response["error"]);
+                }
+            }, function (error) {
+                toastr.error("error in cart");
+            });
+        }
+        else {
+            router.navigate(['/login']);
+            toastr.warning("you are not logged in");
+        }
+    }
+    CartComponent.prototype.ngOnInit = function () {
+    };
+    CartComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-cart',
+            template: __webpack_require__(/*! raw-loader!./cart.component.html */ "./node_modules/raw-loader/index.js!./src/app/cart/cart.component.html"),
+            styles: [__webpack_require__(/*! ./cart.component.css */ "./src/app/cart/cart.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"], ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]])
+    ], CartComponent);
+    return CartComponent;
 }());
 
 
@@ -656,6 +744,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var apiurl = '/api/forgotpassword';
+//var apiurl="http://localhost:7000/api/forgotpassword"
 var ForgotpasswordComponent = /** @class */ (function () {
     function ForgotpasswordComponent(http, toastr) {
         this.http = http;
@@ -978,20 +1067,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+
+
 
 
 
 
 //var apiurl="http://localhost:7000/api/product/"
+//var addtocartapiurl="http://localhost:7000/api/addtocart"
+var addtocartapiurl = "/api/addtocart";
 var ProductdetailsComponent = /** @class */ (function () {
-    function ProductdetailsComponent(http, currentroute) {
+    function ProductdetailsComponent(http, currentroute, toastr, router) {
         var _this = this;
         this.http = http;
         this.currentroute = currentroute;
+        this.toastr = toastr;
+        this.router = router;
         this.product = {};
         console.log("current route ki details", this.currentroute.snapshot);
         var productid = this.currentroute.snapshot.params.id;
-        var apiurl = "http://localhost:7000/api/product/" + productid;
+        // var apiurl = "http://localhost:7000/api/product/"+ productid
+        var apiurl = "/api/product/" + productid;
         this.http.get(apiurl).subscribe(function (response) {
             console.log("response from get product api", response);
             _this.product = response["data"];
@@ -1001,13 +1098,47 @@ var ProductdetailsComponent = /** @class */ (function () {
     }
     ProductdetailsComponent.prototype.ngOnInit = function () {
     };
+    ProductdetailsComponent.prototype.addtocart = function () {
+        var _this = this;
+        if (localStorage.email) {
+            var cart = {
+                email: localStorage.email,
+                pname: this.product["pname"],
+                image: this.product['image'],
+                price: this.product["price"],
+                pid: this.product["pid"]
+            };
+            this.http.post(addtocartapiurl, cart).subscribe(function (response) {
+                if (response['code'] == 200) {
+                    _this.toastr.success("Added to cart");
+                }
+                else {
+                    _this.toastr.error("Error in adding", response['error']);
+                }
+            }, function (error) {
+                _this.toastr.error("error in adding to add cart");
+            });
+        }
+        else {
+            this.router.navigate(["/login"]);
+        }
+    };
+    ProductdetailsComponent.prototype.buynow = function () {
+        if (localStorage.email) {
+            this.addtocart();
+            this.router.navigate(['/cart']);
+        }
+        else {
+            this.router.navigate(['/login']);
+        }
+    };
     ProductdetailsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-productdetails',
             template: __webpack_require__(/*! raw-loader!./productdetails.component.html */ "./node_modules/raw-loader/index.js!./src/app/productdetails/productdetails.component.html"),
             styles: [__webpack_require__(/*! ./productdetails.component.css */ "./src/app/productdetails/productdetails.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"], ngx_toastr__WEBPACK_IMPORTED_MODULE_4__["ToastrService"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]])
     ], ProductdetailsComponent);
     return ProductdetailsComponent;
 }());
@@ -1048,6 +1179,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var apiurl = "/api/signup";
+//var apiurl="http://localhost:7000/api/signup"
 var SignupComponent = /** @class */ (function () {
     function SignupComponent(http, toastr, router) {
         this.http = http;

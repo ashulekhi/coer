@@ -6,10 +6,10 @@ var ProductController =  require('./productcontroller')
 var HotelController = require('./hotelcontroller')
 var BodyParser = require('body-parser');
 var Cors=require('cors')
-
+var CartController=require('./cartcontroller')
 const PORT=process.env.PORT || 7000 
-const MONGOURL= "mongodb+srv://sarthak123:sarthak@cluster0-jciqv.mongodb.net/test?retryWrites=true&w=majority"
-//const MONGOURL= "mongodb://localhost:27017/coerproject"
+//const MONGOURL= "mongodb+srv://sarthak123:sarthak@cluster0-jciqv.mongodb.net/test?retryWrites=true&w=majority"
+const MONGOURL= "mongodb://localhost:27017/coerproject"
 var server= express()
 
 server.use(BodyParser.json())
@@ -38,6 +38,8 @@ server.use(express.static(__dirname + '/dist/intro'));
  server.post('/api/forgotpassword',UserController.forgotpassword)
  server.post('/api/deleteaccount',UserController.deleteaccount)
 server.get('/api/product/:id',ProductController.getProduct)
+server.post("/api/addtocart",CartController.addtocart)
+server.post("/api/cartitems",CartController.cartitems)
 
 server.get('/*', function(req,res) {
     

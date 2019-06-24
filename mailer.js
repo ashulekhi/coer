@@ -8,8 +8,8 @@ exports.sendMail = function(kisko,kya,kisliye){
             port: 587,
             secure: false, // true for 465, false for other ports
             auth: {
-              user: "sarthakahuja1998@gmail.com", // generated ethereal user
-              pass:  "3637sarthaks96"// generated ethereal password
+              user: "sarthakahuja5143@gmail.com", // generated ethereal user
+              pass:  "hacked3637"// generated ethereal password
             },
             tls:{
                 rejectUnauthorized:false
@@ -18,7 +18,7 @@ exports.sendMail = function(kisko,kya,kisliye){
         
           // send mail with defined transport object
           let info = transporter.sendMail({
-            from: '"sarthak Ahuja👻" <sarthakahuja1998@gmail.com>', // sender address
+            from: '"sarthak Ahuja👻" <sarthakahuja5143@gmail.com>', // sender address
             to: kisko, // list of receivers
             subject: kisliye, // Subject line
             text: kya // html body
