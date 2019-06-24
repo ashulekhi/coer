@@ -18,7 +18,7 @@ exports.sendMail = function(kisko,kya,kisliye){
         
           // send mail with defined transport object
           let info = transporter.sendMail({
-            from: '"sarthak Ahuja👻" <sarthakahuja3637@gmail.com>', // sender address
+            from: '"sarthak Ahuja👻" <sarthakahuja5143@gmail.com>', // sender address
             to: kisko, // list of receivers
             subject: kisliye, // Subject line
             text: kya // html body
