@@ -141,7 +141,7 @@ exports.forgotpassword=function(req,res)
                         }
                     },
                     function(error){
-                        console.log("Error")
+                        console.log(error)
                         res.send({
                             error:"erro in sending email"
                         })
