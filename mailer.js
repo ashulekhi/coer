@@ -8,8 +8,8 @@ exports.sendMail = function(kisko,kya,kisliye){
             port: 587,
             secure: false, // true for 465, false for other ports
             auth: {
-              user: "sarthakahuja5143@gmail.com", // generated ethereal user
-              pass:  "hacked3637"// generated ethereal password
+              user: "sarthakahuja3637@gmail.com", // generated ethereal user
+              pass:  "3637sarthaks96"// generated ethereal password
             },
             tls:{
                 rejectUnauthorized:false
