@@ -217,8 +217,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-// var apiurl= '/api/addhotel'
-var apiurl = 'http://localhost:7000/api/addhotel';
+var apiurl = '/api/addhotel';
+//var apiurl= 'http://localhost:7000/api/addhotel'
 let HotelComponent = class HotelComponent {
     constructor(http, toastr) {
         this.http = http;
@@ -300,8 +300,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-//var apiurl= '/api/addproduct'
-var apiurl = 'http://localhost:7000/api/addproduct';
+var apiurl = '/api/addproduct';
+//var apiurl =  'http://localhost:7000/api/addproduct'
 let AddproductComponent = class AddproductComponent {
     constructor(http, toastr) {
         this.http = http;
@@ -393,8 +393,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var apiurl = "http://localhost:7000/api/cartitems";
-//var apiurl="/api/cartitems"
+//var apiurl="http://localhost:7000/api/cartitems"
+var apiurl = "/api/cartitems";
 let AppComponent = class AppComponent {
     constructor(http, toastr, commonservice) {
         this.http = http;
@@ -572,9 +572,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const cartproductsapiurl = "http://localhost:7000/api/cartitems";
-//const cartproductsapiurl="/api/cartitems"
-const cartitemmodelapiurl = "http://localhost:7000/api/deleteitem";
+//const cartproductsapiurl="http://localhost:7000/api/cartitems"
+const cartproductsapiurl = "/api/cartitems";
+const cartitemmodelapiurl = "/api/deleteitem";
+//const cartitemmodelapiurl="http://localhost:7000/api/deleteitem"
 let CartComponent = class CartComponent {
     constructor(http, toastr, router, commonservice) {
         this.http = http;
@@ -817,8 +818,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const deleteuserapiurl = "http://localhost:7000/api/deleteaccount";
-// const deleteuserapiurl="/api/deleteaccount"
+//const deleteuserapiurl="http://localhost:7000/api/deleteaccount"
+const deleteuserapiurl = "/api/deleteaccount";
 let DeleteAccountComponent = class DeleteAccountComponent {
     constructor(http, router, toastr) {
         this.http = http;
@@ -889,8 +890,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-//var apiurl='/api/forgotpassword'
-var apiurl = "http://localhost:7000/api/forgotpassword";
+var apiurl = '/api/forgotpassword';
+//var apiurl="http://localhost:7000/api/forgotpassword"
 let ForgotpasswordComponent = class ForgotpasswordComponent {
     constructor(http, toastr) {
         this.http = http;
@@ -953,8 +954,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-//var apiurl='/api/allproducts'
-var apiurl = 'http://localhost:7000/api/allproducts';
+var apiurl = '/api/allproducts';
+//var apiurl='http://localhost:7000/api/allproducts'
 let HomecomponentComponent = class HomecomponentComponent {
     constructor(http, commonservice) {
         this.http = http;
@@ -1015,8 +1016,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-//var apiurl = "/api/login"
-var apiurl = "http://localhost:7000/api/login";
+var apiurl = "/api/login";
+//var apiurl = "http://localhost:7000/api/login"
 let LoginComponent = class LoginComponent {
     constructor(http, toastr, router) {
         this.http = http;
@@ -1218,8 +1219,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var addtocartapiurl = "http://localhost:7000/api/addtocart";
-//var addtocartapiurl="/api/addtocart"
+//var addtocartapiurl="http://localhost:7000/api/addtocart"
+var addtocartapiurl = "/api/addtocart";
 let ProductdetailsComponent = class ProductdetailsComponent {
     constructor(http, currentroute, toastr, router, commonservice) {
         this.http = http;
@@ -1231,8 +1232,8 @@ let ProductdetailsComponent = class ProductdetailsComponent {
         this.productalreadyincart = false;
         console.log("current route ki details", this.currentroute.snapshot);
         var productid = this.currentroute.snapshot.params.id;
-        var apiurl = "http://localhost:7000/api/product/" + productid;
-        //var apiurl = "/api/product/"+ productid
+        // var apiurl = "http://localhost:7000/api/product/"+ productid
+        var apiurl = "/api/product/" + productid;
         this.http.get(apiurl).subscribe((response) => {
             console.log("response from get product api", response);
             this.product = response["data"];
@@ -1329,8 +1330,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-//var apiurl = "/api/signup"
-var apiurl = "http://localhost:7000/api/signup";
+var apiurl = "/api/signup";
+//var apiurl="http://localhost:7000/api/signup"
 let SignupComponent = class SignupComponent {
     constructor(http, toastr, router) {
         this.http = http;
@@ -1411,8 +1412,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-// var apiurl="/api/allusers"
-var apiurl = "http://localhost:7000/api/allusers";
+var apiurl = "/api/allusers";
+//var apiurl="http://localhost:7000/api/allusers"
 let UsersComponent = class UsersComponent {
     constructor(http, toastr) {
         this.http = http;

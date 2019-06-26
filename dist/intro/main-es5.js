@@ -217,8 +217,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-// var apiurl= '/api/addhotel'
-var apiurl = 'http://localhost:7000/api/addhotel';
+var apiurl = '/api/addhotel';
+//var apiurl= 'http://localhost:7000/api/addhotel'
 var HotelComponent = /** @class */ (function () {
     function HotelComponent(http, toastr) {
         this.http = http;
@@ -302,8 +302,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-//var apiurl= '/api/addproduct'
-var apiurl = 'http://localhost:7000/api/addproduct';
+var apiurl = '/api/addproduct';
+//var apiurl =  'http://localhost:7000/api/addproduct'
 var AddproductComponent = /** @class */ (function () {
     function AddproductComponent(http, toastr) {
         this.http = http;
@@ -397,8 +397,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var apiurl = "http://localhost:7000/api/cartitems";
-//var apiurl="/api/cartitems"
+//var apiurl="http://localhost:7000/api/cartitems"
+var apiurl = "/api/cartitems";
 var AppComponent = /** @class */ (function () {
     function AppComponent(http, toastr, commonservice) {
         this.http = http;
@@ -580,9 +580,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var cartproductsapiurl = "http://localhost:7000/api/cartitems";
-//const cartproductsapiurl="/api/cartitems"
-var cartitemmodelapiurl = "http://localhost:7000/api/deleteitem";
+//const cartproductsapiurl="http://localhost:7000/api/cartitems"
+var cartproductsapiurl = "/api/cartitems";
+var cartitemmodelapiurl = "/api/deleteitem";
+//const cartitemmodelapiurl="http://localhost:7000/api/deleteitem"
 var CartComponent = /** @class */ (function () {
     function CartComponent(http, toastr, router, commonservice) {
         var _this = this;
@@ -832,8 +833,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var deleteuserapiurl = "http://localhost:7000/api/deleteaccount";
-// const deleteuserapiurl="/api/deleteaccount"
+//const deleteuserapiurl="http://localhost:7000/api/deleteaccount"
+var deleteuserapiurl = "/api/deleteaccount";
 var DeleteAccountComponent = /** @class */ (function () {
     function DeleteAccountComponent(http, router, toastr) {
         this.http = http;
@@ -906,8 +907,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-//var apiurl='/api/forgotpassword'
-var apiurl = "http://localhost:7000/api/forgotpassword";
+var apiurl = '/api/forgotpassword';
+//var apiurl="http://localhost:7000/api/forgotpassword"
 var ForgotpasswordComponent = /** @class */ (function () {
     function ForgotpasswordComponent(http, toastr) {
         this.http = http;
@@ -972,8 +973,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-//var apiurl='/api/allproducts'
-var apiurl = 'http://localhost:7000/api/allproducts';
+var apiurl = '/api/allproducts';
+//var apiurl='http://localhost:7000/api/allproducts'
 var HomecomponentComponent = /** @class */ (function () {
     function HomecomponentComponent(http, commonservice) {
         var _this = this;
@@ -1036,8 +1037,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-//var apiurl = "/api/login"
-var apiurl = "http://localhost:7000/api/login";
+var apiurl = "/api/login";
+//var apiurl = "http://localhost:7000/api/login"
 var LoginComponent = /** @class */ (function () {
     function LoginComponent(http, toastr, router) {
         this.http = http;
@@ -1243,8 +1244,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var addtocartapiurl = "http://localhost:7000/api/addtocart";
-//var addtocartapiurl="/api/addtocart"
+//var addtocartapiurl="http://localhost:7000/api/addtocart"
+var addtocartapiurl = "/api/addtocart";
 var ProductdetailsComponent = /** @class */ (function () {
     function ProductdetailsComponent(http, currentroute, toastr, router, commonservice) {
         var _this = this;
@@ -1257,8 +1258,8 @@ var ProductdetailsComponent = /** @class */ (function () {
         this.productalreadyincart = false;
         console.log("current route ki details", this.currentroute.snapshot);
         var productid = this.currentroute.snapshot.params.id;
-        var apiurl = "http://localhost:7000/api/product/" + productid;
-        //var apiurl = "/api/product/"+ productid
+        // var apiurl = "http://localhost:7000/api/product/"+ productid
+        var apiurl = "/api/product/" + productid;
         this.http.get(apiurl).subscribe(function (response) {
             console.log("response from get product api", response);
             _this.product = response["data"];
@@ -1357,8 +1358,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-//var apiurl = "/api/signup"
-var apiurl = "http://localhost:7000/api/signup";
+var apiurl = "/api/signup";
+//var apiurl="http://localhost:7000/api/signup"
 var SignupComponent = /** @class */ (function () {
     function SignupComponent(http, toastr, router) {
         this.http = http;
@@ -1441,8 +1442,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-// var apiurl="/api/allusers"
-var apiurl = "http://localhost:7000/api/allusers";
+var apiurl = "/api/allusers";
+//var apiurl="http://localhost:7000/api/allusers"
 var UsersComponent = /** @class */ (function () {
     function UsersComponent(http, toastr) {
         var _this = this;
