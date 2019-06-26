@@ -2,16 +2,13 @@ var CartModel=require("./cartmodel")
 exports.addtocart=function(req,res){
     if(req.body.email&&req.body.pid){
     
-
-
-
-        var cartdata = new CartModel(req.body)
+var cartdata = new CartModel(req.body)
         cartdata.save()
-        .then (function(newcart){
-            console.log("item added",newcart)
+        .then (function(cartitem){
+            console.log("item added",cartitem)
             res.send({
                 code:200,
-                data:newcart            
+                cartitem:cartitem            
             })
         },
         function(error){
@@ -31,11 +28,11 @@ exports.addtocart=function(req,res){
 }
 exports.cartitems=function(req,res){
     if(req.body.email){
-        CartModel.find({email:req.body.email},function(error,productslist){
-            if(productslist.length>0){
+        CartModel.find({email:req.body.email},function(error,cartitems){
+            if(cartitems.length>0){
                 res.send({
                     code:200,
-                    productslist:productslist
+                    cartitems:cartitems
                 })
             }
             else if(error){
@@ -59,4 +56,30 @@ exports.cartitems=function(req,res){
         })
     }
 
+}
+exports.deleteitem=function(req,res){
+    if(req.body.email&&req.body.pid){
+        CartModel.remove({email:req.body.email,pid:req.body.pid},function(error){
+            if(error){
+                console.log(error)
+                res.send({
+                    code:500,
+                    error:"Error in deletion"
+                })
+            }
+            else{
+                console.log('sucess')
+                res.send({
+                    code:200,
+                    msg:"product removed"
+                })
+            }
+        })
+    }
+    else{
+        res.send({
+            code:404,
+            error:"Insufficient details"
+        })
+    }
 }

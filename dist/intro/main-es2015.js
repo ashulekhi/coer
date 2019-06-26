@@ -63,7 +63,18 @@ module.exports = "<!-- \n<crausel></crausel>\n<login></login>\n\n<div class=\"ro
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<table class=\"table\">\n  <thead>\n    <tr>\n      <td></td>\n      <td>Product Name</td>\n      <td>Quantity</td>\n      <td>Product price</td>\n    </tr>\n  </thead>\n<tbody>\n  <tr *ngFor=\"let product of productslist\">\n    <td><img src=\"{{product.image}}\" alt=\"\" style=\"height:50px; width:50px\"></td>\n    <td>{{product.pname}}</td>\n    <td>{{product.qunatity}}</td>\n    <td>{{product.price}}</td>\n\n  </tr>\n</tbody>\n</table>"
+module.exports = "<div  *ngIf=\"iscartempty\" class=\"alert alert-danger\">\n  Your cart is empty\n</div>\n<table class=\"table\"  *ngIf=\"!iscartEmpty\">\n  <thead>\n    <tr>\n      <td></td>\n      <td>Product Name</td>\n      <td>Quantity</td>\n      <td>Product price</td>\n    </tr>\n  </thead>\n<tbody>\n  <tr *ngFor=\"let item of cartitems\">\n    <td><img src=\"{{item .image}}\" alt=\"\" style=\"height:50px; width:50px\"></td>\n    <td>{{item.pname}}</td>\n    <td>{{item.qunatity}}</td>\n    <td>{{item.price}}</td>\n    <td><button class=\"btn btn-danger\" (click)=\"remove(item)\">Remove</button></td>\n    \n  </tr>\n</tbody>\n\n</table>\n<p>Your total price is:{{totalprice}}</p>\n<button routerLink=\"/checkout\" class=\"btn btn-primary\" (click)=\"checkout()\" >checkout</button>"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/checkout/checkout.component.html":
+/*!****************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/checkout/checkout.component.html ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\" style=\"margin-top:30px \">\n  <div class=\"form-group\">\n    <input type=\"text\" class=\"form-control\" placeholder=\"Enter Mobile no\" [(ngModel)]=\"phone1\">\n  </div>\n  <div class=\"form-group\">\n    <input type=\"text\" class=\"form-control\" placeholder=\"Enter Alternative mobile no\" [(ngModel)]=\"phone2\">\n  </div>\n  <div class=\"form-group\">\n      <input type=\"text\" class=\"form-control\" placeholder=\"Enter Address\" [(ngModel)]=\"address\">\n    </div>\n\n\n  <div class=\"form-group\">\n    <label for=\"\">Total Price</label>\n    <input type=\"text\" class=\"form-control\" disabled [(ngModel)]=\"totalprice\">\n  </div>\n        \n  <button class=\"btn btn-primary\">Submit</button>\n</div>"
 
 /***/ }),
 
@@ -151,7 +162,7 @@ module.exports = "<div (click)=\"showproduct()\" *ngIf='product' class=\"card\" 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\" style=\" padding:20px \">\n  \n  <div class=\"row\">\n      <div class=\"col-md-6\">\n          \n<img src=\"{{product.image}}\" alt=\"image not avilable\" style= \"width: 416px; height: 416px\" ><br>\n          <button  class=\"btn btn-outline-info col-md-5\" style=\"padding: 10px\" (click)=\"addtocart()\"  >Add to Cart</button>\n          <button (click)=\"buynow()\"class=\"btn btn-outline-success col-md-5\" style=\"padding: 10px\" >Buy now</button>\n      </div>\n      <div class=\"col-md-6\">\n\n          <table>\n              <tr>\n                  <td><h3>{{product.pname}}</h3></td>\n              </tr>\n              <tr>\n                  <td><h3>{{product.price}}</h3></td>\n              </tr>\n              <tr>\n\n                  <td><span><img src=\"https://rukminim1.flixcart.com/www/36/36/promos/06/09/2016/49f16fff-0a9d-48bf-a6e6-5980c9852f11.png?q=90\" width=\"18\" height=\"18\" class=\"_3Amlen\" ></span>No cost EMI ₹8,000/month. Standard EMI also availableView Plans</td></tr>\n\n              <tr>\n                  <td><span><img src=\"https://rukminim1.flixcart.com/www/36/36/promos/06/09/2016/c22c9fc4-0555-4460-8401-bf5c28d7ba29.png?q=90\" width=\"18\" height=\"18\" class=\"_3Amlen\" ></span> Bank Offer10% Instant Discount* with Axis Bank Credit and Debit CardsT&C</td></tr>\n              <tr>\n                  <td><span><img src=\"https://rukminim1.flixcart.com/www/36/36/promos/06/09/2016/c22c9fc4-0555-4460-8401-bf5c28d7ba29.png?q=90\" width=\"18\" height=\"18\" class=\"_3Amlen\" ></span>Bank Offer10% off* with Axis Bank Buzz Credit CardT&C</td></tr>\n              <tr>\n                  <td><span><img src=\"https://rukminim1.flixcart.com/www/36/36/promos/06/09/2016/c22c9fc4-0555-4460-8401-bf5c28d7ba29.png?q=90\" width=\"18\" height=\"18\" class=\"_3Amlen\" ></span>Free 16GB SD Card & Camera Bag with this DSLR</td></tr>\n              <tr><td class=\"row\"><span class=\"col-md-4\">Seller</span>\n                  <span class=\"col-md-4\"> RetailNet</span>\n              </td></tr>\n              <tr>\n                  <td class=\"row\">\n                      <span class=\"col-md-4\">Highlights</span>\n\n                      <td><span class=\"col-md-4\"></span><ul><li>Effective Pixels: 24.2 MP</li>\n                          <li><span class=\"col-md-4\">Sensor Type: CMOS</span></li>\n                          <li><span class=\"col-md-4\"></span>WiFi Available</li>\n                          <li><span class=\"col-md-4\"></span>1080p at 60p + Time-Lapse</li></ul>\n\n                  </td></tr>\n          </table>\n      </div>\n  </div>\n\n</div >"
+module.exports = "<div class=\"container\" style=\" padding:20px \">\n  \n  <div class=\"row\">\n      <div class=\"col-md-6\">\n          \n<img src=\"{{product.image}}\" alt=\"image not avilable\" style= \"width: 416px; height: 416px\" ><br>\n          <button  class=\"btn btn-outline-info col-md-5\" style=\"padding: 10px\"  [disabled]='productalreadyincart' (click)=\"addtocart()\"  >Add to Cart</button>\n          <button (click)=\"buynow()\"class=\"btn btn-outline-success col-md-5\" style=\"padding: 10px\" >Buy now</button>\n      </div>\n      <div class=\"col-md-6\">\n\n          <table>\n              <tr>\n                  <td><h3>{{product.pname}}</h3></td>\n              </tr>\n              <tr>\n                  <td><h3>{{product.price}}</h3></td>\n              </tr>\n              <tr>\n\n                  <td><span><img src=\"https://rukminim1.flixcart.com/www/36/36/promos/06/09/2016/49f16fff-0a9d-48bf-a6e6-5980c9852f11.png?q=90\" width=\"18\" height=\"18\" class=\"_3Amlen\" ></span>No cost EMI ₹8,000/month. Standard EMI also availableView Plans</td></tr>\n\n              <tr>\n                  <td><span><img src=\"https://rukminim1.flixcart.com/www/36/36/promos/06/09/2016/c22c9fc4-0555-4460-8401-bf5c28d7ba29.png?q=90\" width=\"18\" height=\"18\" class=\"_3Amlen\" ></span> Bank Offer10% Instant Discount* with Axis Bank Credit and Debit CardsT&C</td></tr>\n              <tr>\n                  <td><span><img src=\"https://rukminim1.flixcart.com/www/36/36/promos/06/09/2016/c22c9fc4-0555-4460-8401-bf5c28d7ba29.png?q=90\" width=\"18\" height=\"18\" class=\"_3Amlen\" ></span>Bank Offer10% off* with Axis Bank Buzz Credit CardT&C</td></tr>\n              <tr>\n                  <td><span><img src=\"https://rukminim1.flixcart.com/www/36/36/promos/06/09/2016/c22c9fc4-0555-4460-8401-bf5c28d7ba29.png?q=90\" width=\"18\" height=\"18\" class=\"_3Amlen\" ></span>Free 16GB SD Card & Camera Bag with this DSLR</td></tr>\n              <tr><td class=\"row\"><span class=\"col-md-4\">Seller</span>\n                  <span class=\"col-md-4\"> RetailNet</span>\n              </td></tr>\n              <tr>\n                  <td class=\"row\">\n                      <span class=\"col-md-4\">Highlights</span>\n\n                      <td><span class=\"col-md-4\"></span><ul><li>Effective Pixels: 24.2 MP</li>\n                          <li><span class=\"col-md-4\">Sensor Type: CMOS</span></li>\n                          <li><span class=\"col-md-4\"></span>WiFi Available</li>\n                          <li><span class=\"col-md-4\"></span>1080p at 60p + Time-Lapse</li></ul>\n\n                  </td></tr>\n          </table>\n      </div>\n  </div>\n\n</div >"
 
 /***/ }),
 
@@ -206,7 +217,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var apiurl = '/api/addhotel';
+// var apiurl= '/api/addhotel'
+var apiurl = 'http://localhost:7000/api/addhotel';
 let HotelComponent = class HotelComponent {
     constructor(http, toastr) {
         this.http = http;
@@ -288,8 +300,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var apiurl = '/api/addproduct';
-//var apiurl =  'http://localhost:7000/allproducts'
+//var apiurl= '/api/addproduct'
+var apiurl = 'http://localhost:7000/api/addproduct';
 let AddproductComponent = class AddproductComponent {
     constructor(http, toastr) {
         this.http = http;
@@ -346,7 +358,6 @@ AddproductComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"], ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"]])
 ], AddproductComponent);
 
-//
 
 
 /***/ }),
@@ -375,20 +386,33 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm2015/ngx-toastr.js");
+/* harmony import */ var _common_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./common.service */ "./src/app/common.service.ts");
 
 
 
-var apiurl = "http://localhost:7000/allproducts";
+
+
+var apiurl = "http://localhost:7000/api/cartitems";
+//var apiurl="/api/cartitems"
 let AppComponent = class AppComponent {
-    constructor(http) {
+    constructor(http, toastr, commonservice) {
         this.http = http;
+        this.toastr = toastr;
+        this.commonservice = commonservice;
         this.title = 'intro';
-        this.http.get(apiurl).subscribe((response) => {
-            console.log('response from all products api', response);
-            this.products = response['products'];
-        }, (error) => {
-            console.log('error in  ');
-        });
+        if (localStorage.email) {
+            http.post(apiurl, { email: localStorage.email }).subscribe((response) => {
+                if (response["code"] == 200) {
+                    commonservice.cartitems = response["cartitems"];
+                }
+                else {
+                    toastr.error(response["error"]);
+                }
+            }, (error) => {
+                toastr.error("error in cart");
+            });
+        }
     }
 };
 AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -397,7 +421,7 @@ AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         template: __webpack_require__(/*! raw-loader!./app.component.html */ "./node_modules/raw-loader/index.js!./src/app/app.component.html"),
         styles: [__webpack_require__(/*! ./app.component.css */ "./src/app/app.component.css")]
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"], ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"], _common_service__WEBPACK_IMPORTED_MODULE_4__["CommonService"]])
 ], AppComponent);
 
 
@@ -437,6 +461,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _deleteaccount_deleteaccount_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./deleteaccount/deleteaccount.component */ "./src/app/deleteaccount/deleteaccount.component.ts");
 /* harmony import */ var _productdetails_productdetails_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./productdetails/productdetails.component */ "./src/app/productdetails/productdetails.component.ts");
 /* harmony import */ var _cart_cart_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./cart/cart.component */ "./src/app/cart/cart.component.ts");
+/* harmony import */ var _checkout_checkout_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./checkout/checkout.component */ "./src/app/checkout/checkout.component.ts");
 
 
 
@@ -460,7 +485,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-// import { DeleteaccountComponent } from './deleteaccount/deleteaccount.component';
+
 const routes = [
     { path: '', component: _homecomponent_homecomponent_component__WEBPACK_IMPORTED_MODULE_4__["HomecomponentComponent"] },
     { path: 'login', component: _login_login_component__WEBPACK_IMPORTED_MODULE_11__["LoginComponent"] },
@@ -472,7 +497,8 @@ const routes = [
     { path: 'productdetails', component: _productdetails_productdetails_component__WEBPACK_IMPORTED_MODULE_21__["ProductdetailsComponent"] },
     { path: 'forgotpassword', component: _forgotpassword_forgotpassword_component__WEBPACK_IMPORTED_MODULE_19__["ForgotpasswordComponent"] },
     { path: 'product/:id', component: _productdetails_productdetails_component__WEBPACK_IMPORTED_MODULE_21__["ProductdetailsComponent"] },
-    { path: "cart", component: _cart_cart_component__WEBPACK_IMPORTED_MODULE_22__["CartComponent"] }
+    { path: "cart", component: _cart_cart_component__WEBPACK_IMPORTED_MODULE_22__["CartComponent"] },
+    { path: "checkout", component: _checkout_checkout_component__WEBPACK_IMPORTED_MODULE_23__["CheckoutComponent"] }
 ];
 let AppModule = class AppModule {
 };
@@ -493,6 +519,7 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _deleteaccount_deleteaccount_component__WEBPACK_IMPORTED_MODULE_20__["DeleteAccountComponent"],
             _productdetails_productdetails_component__WEBPACK_IMPORTED_MODULE_21__["ProductdetailsComponent"],
             _cart_cart_component__WEBPACK_IMPORTED_MODULE_22__["CartComponent"],
+            _checkout_checkout_component__WEBPACK_IMPORTED_MODULE_23__["CheckoutComponent"],
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -538,29 +565,54 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
 /* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm2015/ngx-toastr.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _common_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../common.service */ "./src/app/common.service.ts");
 
 
 
 
 
-//const cartproductsapiurl="http://localhost:7000/api/cartitems"
-const cartproductsapiurl = "/api/cartitems";
+
+const cartproductsapiurl = "http://localhost:7000/api/cartitems";
+//const cartproductsapiurl="/api/cartitems"
+const cartitemmodelapiurl = "http://localhost:7000/api/deleteitem";
 let CartComponent = class CartComponent {
-    constructor(http, toastr, router) {
+    constructor(http, toastr, router, commonservice) {
         this.http = http;
         this.toastr = toastr;
         this.router = router;
+        this.commonservice = commonservice;
+        this.cartitems = [];
+        this.iscartempty = true;
+        this.totalprice = 0;
         if (localStorage.email) {
-            http.post(cartproductsapiurl, { email: localStorage.email }).subscribe((response) => {
-                if (response["code"] == 200) {
-                    this.productslist = response["productslist"];
-                }
-                else {
-                    toastr.error(response["error"]);
-                }
-            }, (error) => {
-                toastr.error("error in cart");
-            });
+            if (commonservice.cartitems.length > 0) {
+                this.cartitems = commonservice.cartitems;
+                this.iscartempty = false;
+                this.commonservice.cartitems.forEach((each) => {
+                    console.log(each);
+                    this.totalprice = this.totalprice + each.price;
+                });
+            }
+            else {
+                http.post(cartproductsapiurl, { email: localStorage.email }).subscribe((response) => {
+                    if (response["code"] == 200) {
+                        this.cartitems = response["cartitems"];
+                        commonservice.cartitems = response['cartitems'];
+                        if (this.commonservice.cartitems.length > 0) {
+                            this.iscartempty = false;
+                            this.cartitems.forEach((each) => {
+                                this.totalprice = this.totalprice + each.price;
+                            });
+                        }
+                    }
+                    else {
+                        this.iscartempty = true;
+                        toastr.error(response['error']);
+                    }
+                }, (error) => {
+                    toastr.error("error in cart");
+                });
+            }
         }
         else {
             router.navigate(['/login']);
@@ -569,6 +621,30 @@ let CartComponent = class CartComponent {
     }
     ngOnInit() {
     }
+    remove(item) {
+        var requestob = { email: localStorage.email, pid: item.pid };
+        console.log("rrequest", requestob);
+        this.http.post(cartitemmodelapiurl, requestob).subscribe((response) => {
+            console.log(response);
+            if (response['code'] == 200) {
+                this.toastr.success("Cart Item Deleted");
+                var index = this.commonservice.cartitems.indexOf(item);
+                this.commonservice.cartitems.splice(index, 1);
+                if (this.commonservice.cartitems.length <= 0) {
+                    this.iscartempty = true;
+                }
+                this.totalprice = this.totalprice - item.price;
+            }
+            else {
+                this.toastr.error("Error in deleting");
+            }
+        }, (error) => {
+            this.toastr.error("Internal server error");
+        });
+    }
+    checkout() {
+        localStorage.totalprice = this.totalprice;
+    }
 };
 CartComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -576,8 +652,92 @@ CartComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         template: __webpack_require__(/*! raw-loader!./cart.component.html */ "./node_modules/raw-loader/index.js!./src/app/cart/cart.component.html"),
         styles: [__webpack_require__(/*! ./cart.component.css */ "./src/app/cart/cart.component.css")]
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"], ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]])
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"], ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"], _common_service__WEBPACK_IMPORTED_MODULE_5__["CommonService"]])
 ], CartComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/checkout/checkout.component.css":
+/*!*************************************************!*\
+  !*** ./src/app/checkout/checkout.component.css ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NoZWNrb3V0L2NoZWNrb3V0LmNvbXBvbmVudC5jc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/checkout/checkout.component.ts":
+/*!************************************************!*\
+  !*** ./src/app/checkout/checkout.component.ts ***!
+  \************************************************/
+/*! exports provided: CheckoutComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CheckoutComponent", function() { return CheckoutComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+
+
+
+let CheckoutComponent = class CheckoutComponent {
+    constructor(currentroute) {
+        this.currentroute = currentroute;
+        this.phone = '';
+        this.phone2 = '';
+        this.address = "";
+        this.totalprice = "";
+        if (localStorage.totalprice)
+            this.totalprice = localStorage.totalprice;
+    }
+    ngOnInit() {
+    }
+};
+CheckoutComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-checkout',
+        template: __webpack_require__(/*! raw-loader!./checkout.component.html */ "./node_modules/raw-loader/index.js!./src/app/checkout/checkout.component.html"),
+        styles: [__webpack_require__(/*! ./checkout.component.css */ "./src/app/checkout/checkout.component.css")]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]])
+], CheckoutComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/common.service.ts":
+/*!***********************************!*\
+  !*** ./src/app/common.service.ts ***!
+  \***********************************/
+/*! exports provided: CommonService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CommonService", function() { return CommonService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let CommonService = class CommonService {
+    constructor() {
+        this.products = null;
+        this.cartitems = [];
+    }
+};
+CommonService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+], CommonService);
 
 
 
@@ -657,7 +817,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const deleteuserapiurl = "/api/deleteaccount";
+const deleteuserapiurl = "http://localhost:7000/api/deleteaccount";
+// const deleteuserapiurl="/api/deleteaccount"
 let DeleteAccountComponent = class DeleteAccountComponent {
     constructor(http, router, toastr) {
         this.http = http;
@@ -728,8 +889,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var apiurl = '/api/forgotpassword';
-//var apiurl="http://localhost:7000/api/forgotpassword"
+//var apiurl='/api/forgotpassword'
+var apiurl = "http://localhost:7000/api/forgotpassword";
 let ForgotpasswordComponent = class ForgotpasswordComponent {
     constructor(http, toastr) {
         this.http = http;
@@ -787,18 +948,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _common_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../common.service */ "./src/app/common.service.ts");
 
 
 
-var apiurl = '/api/allproducts';
-//var apiurl='http://localhost:7000/api/allproducts'
+
+//var apiurl='/api/allproducts'
+var apiurl = 'http://localhost:7000/api/allproducts';
 let HomecomponentComponent = class HomecomponentComponent {
-    constructor(http) {
+    constructor(http, commonservice) {
         this.http = http;
+        this.commonservice = commonservice;
         this.products = [];
         this.http.get(apiurl).subscribe((response) => {
             console.log(response['products']);
             this.products = response['products'];
+            this.commonservice.products = response['products'];
         }, (error) => {
             console.log("error in finding details", error);
         });
@@ -812,7 +977,7 @@ HomecomponentComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         template: __webpack_require__(/*! raw-loader!./homecomponent.component.html */ "./node_modules/raw-loader/index.js!./src/app/homecomponent/homecomponent.component.html"),
         styles: [__webpack_require__(/*! ./homecomponent.component.css */ "./src/app/homecomponent/homecomponent.component.css")]
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"], _common_service__WEBPACK_IMPORTED_MODULE_3__["CommonService"]])
 ], HomecomponentComponent);
 
 
@@ -850,8 +1015,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var apiurl = "/api/login";
-//var apiurl = "http://localhost:7000/api/login"
+//var apiurl = "/api/login"
+var apiurl = "http://localhost:7000/api/login";
 let LoginComponent = class LoginComponent {
     constructor(http, toastr, router) {
         this.http = http;
@@ -1045,29 +1210,37 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
 /* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm2015/ngx-toastr.js");
+/* harmony import */ var _common_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../common.service */ "./src/app/common.service.ts");
 
 
 
 
 
 
-//var apiurl="http://localhost:7000/api/product/"
-//var addtocartapiurl="http://localhost:7000/api/addtocart"
-var addtocartapiurl = "/api/addtocart";
+
+var addtocartapiurl = "http://localhost:7000/api/addtocart";
+//var addtocartapiurl="/api/addtocart"
 let ProductdetailsComponent = class ProductdetailsComponent {
-    constructor(http, currentroute, toastr, router) {
+    constructor(http, currentroute, toastr, router, commonservice) {
         this.http = http;
         this.currentroute = currentroute;
         this.toastr = toastr;
         this.router = router;
+        this.commonservice = commonservice;
         this.product = {};
+        this.productalreadyincart = false;
         console.log("current route ki details", this.currentroute.snapshot);
         var productid = this.currentroute.snapshot.params.id;
-        // var apiurl = "http://localhost:7000/api/product/"+ productid
-        var apiurl = "/api/product/" + productid;
+        var apiurl = "http://localhost:7000/api/product/" + productid;
+        //var apiurl = "/api/product/"+ productid
         this.http.get(apiurl).subscribe((response) => {
             console.log("response from get product api", response);
             this.product = response["data"];
+            this.commonservice.cartitems.forEach((each) => {
+                if (each.pid == this.product["pid"]) {
+                    this.productalreadyincart = true;
+                }
+            });
         }, (error) => {
             console.log("error in getting product detail", error);
         });
@@ -1086,6 +1259,8 @@ let ProductdetailsComponent = class ProductdetailsComponent {
             this.http.post(addtocartapiurl, cart).subscribe((response) => {
                 if (response['code'] == 200) {
                     this.toastr.success("Added to cart");
+                    this.productalreadyincart = true;
+                    this.commonservice.cartitems.push(response["cartitem"]);
                 }
                 else {
                     this.toastr.error("Error in adding", response['error']);
@@ -1100,7 +1275,9 @@ let ProductdetailsComponent = class ProductdetailsComponent {
     }
     buynow() {
         if (localStorage.email) {
-            this.addtocart();
+            if (!this.productalreadyincart) {
+                this.addtocart();
+            }
             this.router.navigate(['/cart']);
         }
         else {
@@ -1114,7 +1291,7 @@ ProductdetailsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         template: __webpack_require__(/*! raw-loader!./productdetails.component.html */ "./node_modules/raw-loader/index.js!./src/app/productdetails/productdetails.component.html"),
         styles: [__webpack_require__(/*! ./productdetails.component.css */ "./src/app/productdetails/productdetails.component.css")]
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"], ngx_toastr__WEBPACK_IMPORTED_MODULE_4__["ToastrService"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]])
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"], ngx_toastr__WEBPACK_IMPORTED_MODULE_4__["ToastrService"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"], _common_service__WEBPACK_IMPORTED_MODULE_5__["CommonService"]])
 ], ProductdetailsComponent);
 
 
@@ -1152,8 +1329,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var apiurl = "/api/signup";
-//var apiurl="http://localhost:7000/api/signup"
+//var apiurl = "/api/signup"
+var apiurl = "http://localhost:7000/api/signup";
 let SignupComponent = class SignupComponent {
     constructor(http, toastr, router) {
         this.http = http;
@@ -1234,8 +1411,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var apiurl = "/api/allusers";
-//var apiurl="http://localhost:7000/api/allusers"
+// var apiurl="/api/allusers"
+var apiurl = "http://localhost:7000/api/allusers";
 let UsersComponent = class UsersComponent {
     constructor(http, toastr) {
         this.http = http;
