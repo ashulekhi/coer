@@ -7,6 +7,7 @@ var HotelController = require('./hotelcontroller')
 var BodyParser = require('body-parser');
 var Cors=require('cors')
 var CartController=require('./cartcontroller')
+var ordercontroller=require('./ordercontroller')
 const PORT=process.env.PORT || 7000 
 const MONGOURL= "mongodb+srv://sarthak123:sarthak@cluster0-jciqv.mongodb.net/test?retryWrites=true&w=majority"
 //const MONGOURL= "mongodb://localhost:27017/coerproject"
@@ -41,7 +42,10 @@ server.get('/api/product/:id',ProductController.getProduct)
 server.post("/api/addtocart",CartController.addtocart)
 server.post("/api/cartitems",CartController.cartitems)
 server.post("/api/deleteitem",CartController.deleteitem)
-
+server.post('/api/addorder',ordercontroller.addorder)
+ server.post("/api/getorder",ordercontroller.getorder)
+server.post('/api/orders',ordercontroller.myorders)
+server.get('/api/allorders',ordercontroller.allorders)
 server.get('/*', function(req,res) {
     
     res.sendFile(path.join(__dirname+'/dist/intro/index.html'));

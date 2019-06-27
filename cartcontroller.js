@@ -3,28 +3,30 @@ exports.addtocart=function(req,res){
     if(req.body.email&&req.body.pid){
     
 var cartdata = new CartModel(req.body)
-        cartdata.save()
-        .then (function(cartitem){
-            console.log("item added",cartitem)
-            res.send({
-                code:200,
-                cartitem:cartitem            
-            })
-        },
-        function(error){
-            console.log("error in adding",error)
-            res.send({
-                code:500,
-                error:"Internal server error000"
-            })
-        }
-        )
-    }
-    else{
+cartdata.save(function(error,cartitem){
+    if(cartitem){
+        console.log("item added to cart",cartitem)
         res.send({
-            error:"Insufficient details"
+            code:200,
+            cartitem:cartitem
         })
     }
+    else{
+        console.log("error in adding to cart",error)
+        res.send({
+            code:500,
+            error:'internal server error'
+        })
+    }
+})
+}
+else{
+console.log("insufficient details")
+res.send({
+    code:510,
+    error:'insufficient details'
+})
+}
 }
 exports.cartitems=function(req,res){
     if(req.body.email){
@@ -43,8 +45,9 @@ exports.cartitems=function(req,res){
             }
             else{
                 res.send({
-                    code:404,
-                    error:"no item in cart"
+                    error:"no item in cart",
+                    code:404
+                   
                 })
             }
         }

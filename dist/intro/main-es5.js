@@ -45,6 +45,17 @@ module.exports = "\n<div class=\"container\"><h1>Add Product Form</h1>\n<div>\n 
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/index.js!./src/app/admin/admin.component.html":
+/*!**********************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/admin/admin.component.html ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div *ngIf=\"isorderempty\">No Order Found</div>\n<div *ngIf=\"!isorderempty\">\n  <div class=\"jumbotron\" *ngFor=\"let order of orders\" >\n    <h1 class=\"display-4\">Order id :{{order.oid}}</h1>\n    <div class=\"lead\">\n      <table class=\"table\">\n        <tbody>\n          <tr *ngFor=\"let item of order.items\">\n            <td><img src=\"{{item.image}}\" alt=\"\" style=\"height:50px;width:50px;\"></td>\n            <td>{{item.name}}</td>\n            <td>{{item.price}}</td>\n            <td>{{item.qunatity}}</td>\n          </tr>\n        </tbody>\n      </table>\n    </div>\n    <hr class=\"my-4\">\n    <p>{{order.totalprice}}</p>\n  </div>\n</div>"
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/index.js!./src/app/app.component.html":
 /*!**************************************************************!*\
   !*** ./node_modules/raw-loader!./src/app/app.component.html ***!
@@ -63,7 +74,7 @@ module.exports = "<!-- \n<crausel></crausel>\n<login></login>\n\n<div class=\"ro
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div  *ngIf=\"iscartempty\" class=\"alert alert-danger\">\n  Your cart is empty\n</div>\n<table class=\"table\"  *ngIf=\"!iscartEmpty\">\n  <thead>\n    <tr>\n      <td></td>\n      <td>Product Name</td>\n      <td>Quantity</td>\n      <td>Product price</td>\n    </tr>\n  </thead>\n<tbody>\n  <tr *ngFor=\"let item of cartitems\">\n    <td><img src=\"{{item .image}}\" alt=\"\" style=\"height:50px; width:50px\"></td>\n    <td>{{item.pname}}</td>\n    <td>{{item.qunatity}}</td>\n    <td>{{item.price}}</td>\n    <td><button class=\"btn btn-danger\" (click)=\"remove(item)\">Remove</button></td>\n    \n  </tr>\n</tbody>\n\n</table>\n<p>Your total price is:{{totalprice}}</p>\n<button routerLink=\"/checkout\" class=\"btn btn-primary\" (click)=\"checkout()\" >checkout</button>"
+module.exports = "<div  *ngIf=\"iscartempty\" class=\"alert alert-danger\">\n  Your cart is empty\n</div>\n<table class=\"table\"  *ngIf=\"!iscartEmpty\">\n  <thead>\n    <tr>\n      <td></td>\n      <td>Product Name</td>\n      <td>Quantity</td>\n      <td>Product price</td>\n    </tr>\n  </thead>\n<tbody>\n  <tr *ngFor=\"let item of cartitems\">\n    <td><img src=\"{{item .image}}\" alt=\"\" style=\"height:50px; width:50px\"></td>\n    <td>{{item.pname}}</td>\n    <td>{{item.quantity}}</td>\n    <td>{{item.price}}</td>\n    <td><button class=\"btn btn-danger\" (click)=\"remove(item)\">Remove</button></td>\n    \n  </tr>\n</tbody>\n\n</table>\n<p>Your total price is:{{totalprice}}</p>\n<button routerLink=\"/checkout\" *ngIf=\"!iscartempty\" class=\"btn btn-primary\" (click)=\"checkout()\" >Checkout</button>"
 
 /***/ }),
 
@@ -74,7 +85,7 @@ module.exports = "<div  *ngIf=\"iscartempty\" class=\"alert alert-danger\">\n  Y
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\" style=\"margin-top:30px \">\n  <div class=\"form-group\">\n    <input type=\"text\" class=\"form-control\" placeholder=\"Enter Mobile no\" [(ngModel)]=\"phone1\">\n  </div>\n  <div class=\"form-group\">\n    <input type=\"text\" class=\"form-control\" placeholder=\"Enter Alternative mobile no\" [(ngModel)]=\"phone2\">\n  </div>\n  <div class=\"form-group\">\n      <input type=\"text\" class=\"form-control\" placeholder=\"Enter Address\" [(ngModel)]=\"address\">\n    </div>\n\n\n  <div class=\"form-group\">\n    <label for=\"\">Total Price</label>\n    <input type=\"text\" class=\"form-control\" disabled [(ngModel)]=\"totalprice\">\n  </div>\n        \n  <button class=\"btn btn-primary\">Submit</button>\n</div>"
+module.exports = "<table class=\"table\">\n  <thead>\n      <tr>\n          <td></td>\n          <td>Product Name</td>\n          <td>Quantity</td>\n          <td>Product price</td>\n        </tr>\n    </thead>\n    <tbody>\n    <tr *ngFor=\"let item of cartitems\">\n      <td><img src=\"{{item .image}}\" alt=\"\" style=\"height:50px; width:50px\"></td>\n      <td>{{item.pname}}</td>\n      <td>{{item.qunatity}}</td>\n      <td>{{item.price}}</td>\n    </tr>\n    </tbody>\n    \n \n</table>\n<div class=\"form-group\">\n    <label for=\"\">Total Price</label>\n    <input type=\"text\" class=\"form-control\" disabled [(ngModel)]=\"totalprice\">\n  </div>\n  <div   class=\"alert alert-warning\">\n      Enter your Details!\n    </div>\n\n\n\n\n\n\n\n\n<div class=\"container\" style=\"margin-top:30px \">\n  <div class=\"form-group\">\n    <input type=\"number\" class=\"form-control\" placeholder=\"Enter Mobile no\" [(ngModel)]=\"phone\">\n  </div>\n  <div class=\"form-group\">\n    <input type=\"text\" class=\"form-control\" placeholder=\"Enter Your name\" [(ngModel)]=\"name\">\n  </div>\n  <div class=\"form-group\">\n      <input type=\"text\" class=\"form-control\" placeholder=\"Enter Area\" [(ngModel)]=\"area\">\n    </div>\n    <div class=\"form-group\">\n        <input type=\"text\" class=\"form-control\" placeholder=\"Enter Street\" [(ngModel)]=\"street\">\n      </div>\n      <div class=\"form-group\">\n          <input type=\"text\" class=\"form-control\" placeholder=\"Enter City\" [(ngModel)]=\"city\">\n        </div>\n    <div class=\"form-group\">\n      <input type=\"number\" class=\"form-control\"  placeholder=\"Pincode\" [(ngModel)]=\"pincode\">\n    </div>\n    <div class=\"form-group\">\n        <input type=\"text\" class=\"form-control\"  placeholder=\"Enter Email\" [(ngModel)]=\"email\">\n      </div>\n    \n    <div class=\"form-group\">\n      <label for=\"\">Mode of Payment</label><br>\n    <input type=\"checkbox\" checked  disabled [(ngModel)]=\"modeofpayment\">\n    Cash on Delivery\n    </div>\n\n\n \n        \n  <button class=\"btn btn-primary\"  (click)=\"placeorder()\">Place Order</button>\n</div>"
 
 /***/ }),
 
@@ -140,7 +151,29 @@ module.exports = "<div class=container>\n <h1> Login Form!</h1>\n <form action=\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\n    <a class=\"navbar-brand\" routerLink=\"/\">{{projectname}}</a>\n    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n      <span class=\"navbar-toggler-icon\">\n        </span>\n    </button>\n  \n    <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n      <ul class=\"navbar-nav mr-auto\">\n        <li class=\"nav-item active\">\n          <a class=\"nav-link\" routerLink=\"/\">Home <span class=\"sr-only\">(current)</span></a>\n        </li>\n        <li class=\"nav-item\">\n          <a class=\"nav-link\" routerLink=\"/addproduct\">Add product</a>\n        </li>\n        <li class=\"nav-item dropdown\">\n          <a class=\"nav-link dropdown-toggle\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n            Options\n          </a>\n          <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\n            <a class=\"dropdown-item\"  *ngIf=\"isuserloggedin\"routerLink=\"/deleteaccount\">Delete Account</a>\n            <a class=\"dropdown-item\" routerLink=\"#\">Another action</a>\n            <div class=\"dropdown-divider\"></div>\n            <a class=\"dropdown-item\" routerLink=\"#\">Something else here</a>\n          </div>\n        </li>\n        <li class=\"nav-item\">\n          <a class=\"nav-link enabled\" routerLink=\"#\" tabindex=\"-1\" aria-disabled=\"true\">Disabled</a>\n        </li>\n      </ul>\n      <div *ngIf=\"!isuserloggedin\" class=\"form-inline my-2 my-lg-0\">\n        <button  style=\"margin:50\" routerLink=\"/login\" class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Login</button>\n        <button  style=\"margin:50\" routerLink=\"/signup\" class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Signup</button>\n      </div>\n      <!-- <input class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Login\" aria-label=\"Search\"> -->\n      <div *ngIf=\"isuserloggedin\" class=\"form-inline my-2 my-lg-0\">\n      <button  routerLink=\"/login\" class=\"btn btn-outline-success my-2 my-sm-0\"(click)=\"logout()\" type=\"logout\">Logout</button>\n     \n      <button  routerLink=\"/cart\" class=\"btn btn-outline-success my-2 my-sm-0\" type=\"cart\">Cart</button>\n     \n\n    </div>\n    </div>\n  </nav>"
+module.exports = "<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\n    <a class=\"navbar-brand\" routerLink=\"/\">{{projectname | uppercase }}</a>\n    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n      <span class=\"navbar-toggler-icon\">\n        </span>\n    </button>\n  \n    <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n      <ul class=\"navbar-nav mr-auto\">\n        <li class=\"nav-item active\">\n          <a class=\"nav-link\" routerLink=\"/\">Home <span class=\"sr-only\">(current)</span></a>\n        </li>\n        <li class=\"nav-item\">\n          <a class=\"nav-link\" routerLink=\"/addproduct\">Add product</a>\n        </li>\n        <li class=\"nav-item dropdown\">\n          <a class=\"nav-link dropdown-toggle\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n            Options\n          </a>\n          <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\n            <a class=\"dropdown-item\"  *ngIf=\"isuserloggedin\"routerLink=\"/deleteaccount\">Delete Account</a>\n            <a class=\"dropdown-item\" routerLink=\"#\">Another action</a>\n            <div class=\"dropdown-divider\"></div>\n            <a class=\"dropdown-item\" routerLink=\"#\">Something else here</a>\n          </div>\n        </li>\n        <li class=\"nav-item\">\n          <a class=\"nav-link enabled\" routerLink=\"#\" tabindex=\"-1\" aria-disabled=\"true\">Disabled</a>\n        </li>\n      </ul>\n      <div *ngIf=\"!isuserloggedin\" class=\"form-inline my-2 my-lg-0\">\n        <button  style=\"margin:50\" routerLink=\"/login\" class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Login</button>\n        <button  style=\"margin:50\" routerLink=\"/signup\" class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Signup</button>\n      </div>\n      <!-- <input class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Login\" aria-label=\"Search\"> -->\n      <div *ngIf=\"isuserloggedin\" class=\"form-inline my-2 my-lg-0\">\n      <button  routerLink=\"/login\" class=\"btn btn-outline-success my-2 my-sm-0\"(click)=\"logout()\"   style =\"margin:20px\" type=\"logout\">Logout</button>\n      <button class=\"btn btn-outline-success my-2 my-sm-0\"  style =\"margin:20px\" routerLink=\"/orders\">My orders</button>\n      <button class=\"btn btn-outline-success my-2 my-sm-0\" style =\"margin:20px\" routerLink=\"/allorders\" >Admin</button>\n      <button  routerLink=\"/cart\" class=\"btn btn-outline-success my-2 my-sm-0\"    style =\"margin:20px\" type=\"cart\">Cart</button>\n     \n\n    </div>\n    </div>\n  </nav>"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/orders/orders.component.html":
+/*!************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/orders/orders.component.html ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"jumbotron\" *ngFor=\"let order of orders\">\n    <h1 class=\"display-4\">Order id :{{order.oid}}</h1>\n    <div class=\"lead\">\n      <table class=\"table\">\n        <tbody>\n          <tr *ngFor=\"let item of order.items\">\n            <td><img src=\"{{item.image}}\" alt=\"\" style=\"height:50px;width:50px;\"></td>\n            <td>{{item.pname}}</td>\n            <td>{{item.price}}</td>\n            <td>{{item.qunatity}}</td>\n          </tr>\n        </tbody>\n      </table>\n    </div>\n    <hr class=\"my-4\">\n    <p>{{order.totalprice}}</p>\n  </div>"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/ordersucess/ordersucess.component.html":
+/*!**********************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/ordersucess/ordersucess.component.html ***!
+  \**********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div *ngIf=\"order\">\n    Thank you {{order.name}}<br>\n    Your Order has been successfully placed<br>\n    your OrderId is {{order.oid}}<br>\n    you order will be delivered in 5-10 days<br>\n    </div>\n    <button class=\"btn btn-primary\" routerLink=\"/\">Continue Shopping</button>"
 
 /***/ }),
 
@@ -298,6 +331,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+
 
 
 
@@ -305,9 +340,10 @@ __webpack_require__.r(__webpack_exports__);
 var apiurl = '/api/addproduct';
 //var apiurl =  'http://localhost:7000/api/addproduct'
 var AddproductComponent = /** @class */ (function () {
-    function AddproductComponent(http, toastr) {
+    function AddproductComponent(http, toastr, router) {
         this.http = http;
         this.toastr = toastr;
+        this.router = router;
         this.pname = '';
         this.type = '';
         this.company = '';
@@ -317,6 +353,9 @@ var AddproductComponent = /** @class */ (function () {
         this.seller = '';
         this.quantity = "";
         this.rating = "";
+        if (!localStorage.email) {
+            router.navigate(['/login']);
+        }
     }
     AddproductComponent.prototype.ngOnInit = function () {
     };
@@ -342,6 +381,7 @@ var AddproductComponent = /** @class */ (function () {
                 _this.toastr.success(response['msg']);
             }
         }, function (error) {
+            _this.toastr.error(error);
             console.log("error from product api", error);
         });
     };
@@ -357,9 +397,89 @@ var AddproductComponent = /** @class */ (function () {
             template: __webpack_require__(/*! raw-loader!./addproduct.component.html */ "./node_modules/raw-loader/index.js!./src/app/addproduct/addproduct.component.html"),
             styles: [__webpack_require__(/*! ./addproduct.component.css */ "./src/app/addproduct/addproduct.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"], ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"], ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]])
     ], AddproductComponent);
     return AddproductComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/admin/admin.component.css":
+/*!*******************************************!*\
+  !*** ./src/app/admin/admin.component.css ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FkbWluL2FkbWluLmNvbXBvbmVudC5jc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/admin/admin.component.ts":
+/*!******************************************!*\
+  !*** ./src/app/admin/admin.component.ts ***!
+  \******************************************/
+/*! exports provided: AdminComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AdminComponent", function() { return AdminComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+
+
+
+
+
+var allordersapiurl = '/api/allorders';
+//const allordersapiurl='http://localhost:7000/api/allorders'
+var AdminComponent = /** @class */ (function () {
+    function AdminComponent(http, toastr, router) {
+        var _this = this;
+        this.http = http;
+        this.toastr = toastr;
+        this.router = router;
+        this.orders = [];
+        this.isorderempty = true;
+        if (localStorage.email) {
+            http.get(allordersapiurl).subscribe(function (response) {
+                if (response['code'] == 200) {
+                    _this.orders = response['orders'];
+                    console.log(response['orders']);
+                    _this.isorderempty = false;
+                }
+                else if (response['code'] = 404) {
+                    _this.isorderempty = true;
+                }
+                else {
+                    toastr.error(response['error']);
+                }
+            }, function (error) {
+                console.log(error);
+            });
+        }
+        else {
+            router.navigate(['/login']);
+            toastr.warning('you are not logged in');
+        }
+    }
+    AdminComponent.prototype.ngOnInit = function () {
+    };
+    AdminComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-admin',
+            template: __webpack_require__(/*! raw-loader!./admin.component.html */ "./node_modules/raw-loader/index.js!./src/app/admin/admin.component.html"),
+            styles: [__webpack_require__(/*! ./admin.component.css */ "./src/app/admin/admin.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"], ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]])
+    ], AdminComponent);
+    return AdminComponent;
 }());
 
 
@@ -409,9 +529,6 @@ var AppComponent = /** @class */ (function () {
             http.post(apiurl, { email: localStorage.email }).subscribe(function (response) {
                 if (response["code"] == 200) {
                     commonservice.cartitems = response["cartitems"];
-                }
-                else {
-                    toastr.error(response["error"]);
                 }
             }, function (error) {
                 toastr.error("error in cart");
@@ -467,6 +584,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _productdetails_productdetails_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./productdetails/productdetails.component */ "./src/app/productdetails/productdetails.component.ts");
 /* harmony import */ var _cart_cart_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./cart/cart.component */ "./src/app/cart/cart.component.ts");
 /* harmony import */ var _checkout_checkout_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./checkout/checkout.component */ "./src/app/checkout/checkout.component.ts");
+/* harmony import */ var _discount_pipe__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./discount.pipe */ "./src/app/discount.pipe.ts");
+/* harmony import */ var _ordersucess_ordersucess_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./ordersucess/ordersucess.component */ "./src/app/ordersucess/ordersucess.component.ts");
+/* harmony import */ var _orders_orders_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./orders/orders.component */ "./src/app/orders/orders.component.ts");
+/* harmony import */ var _admin_admin_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./admin/admin.component */ "./src/app/admin/admin.component.ts");
 
 
 
@@ -477,6 +598,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
  //http client ke liye
+
+
+
+
 
 
 
@@ -503,7 +628,10 @@ var routes = [
     { path: 'forgotpassword', component: _forgotpassword_forgotpassword_component__WEBPACK_IMPORTED_MODULE_19__["ForgotpasswordComponent"] },
     { path: 'product/:id', component: _productdetails_productdetails_component__WEBPACK_IMPORTED_MODULE_21__["ProductdetailsComponent"] },
     { path: "cart", component: _cart_cart_component__WEBPACK_IMPORTED_MODULE_22__["CartComponent"] },
-    { path: "checkout", component: _checkout_checkout_component__WEBPACK_IMPORTED_MODULE_23__["CheckoutComponent"] }
+    { path: "checkout", component: _checkout_checkout_component__WEBPACK_IMPORTED_MODULE_23__["CheckoutComponent"] },
+    { path: "ordersucess/:oid", component: _ordersucess_ordersucess_component__WEBPACK_IMPORTED_MODULE_25__["OrdersucessComponent"] },
+    { path: "orders", component: _orders_orders_component__WEBPACK_IMPORTED_MODULE_26__["OrdersComponent"] },
+    { path: "allorders", component: _admin_admin_component__WEBPACK_IMPORTED_MODULE_27__["AdminComponent"] }
 ];
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -526,6 +654,10 @@ var AppModule = /** @class */ (function () {
                 _productdetails_productdetails_component__WEBPACK_IMPORTED_MODULE_21__["ProductdetailsComponent"],
                 _cart_cart_component__WEBPACK_IMPORTED_MODULE_22__["CartComponent"],
                 _checkout_checkout_component__WEBPACK_IMPORTED_MODULE_23__["CheckoutComponent"],
+                _discount_pipe__WEBPACK_IMPORTED_MODULE_24__["DiscountPipe"],
+                _ordersucess_ordersucess_component__WEBPACK_IMPORTED_MODULE_25__["OrdersucessComponent"],
+                _orders_orders_component__WEBPACK_IMPORTED_MODULE_26__["OrdersComponent"],
+                _admin_admin_component__WEBPACK_IMPORTED_MODULE_27__["AdminComponent"],
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -596,24 +728,17 @@ var CartComponent = /** @class */ (function () {
         this.totalprice = 0;
         if (localStorage.email) {
             if (commonservice.cartitems.length > 0) {
+                console.log(">>>>>>>>>>> coming from common service", commonservice.cartitems);
                 this.cartitems = commonservice.cartitems;
                 this.iscartempty = false;
-                this.commonservice.cartitems.forEach(function (each) {
-                    console.log(each);
-                    _this.totalprice = _this.totalprice + each.price;
-                });
             }
             else {
+                console.log("enetered into else");
                 http.post(cartproductsapiurl, { email: localStorage.email }).subscribe(function (response) {
                     if (response["code"] == 200) {
                         _this.cartitems = response["cartitems"];
                         commonservice.cartitems = response['cartitems'];
-                        if (_this.commonservice.cartitems.length > 0) {
-                            _this.iscartempty = false;
-                            _this.cartitems.forEach(function (each) {
-                                _this.totalprice = _this.totalprice + each.price;
-                            });
-                        }
+                        _this.iscartempty = false;
                     }
                     else {
                         _this.iscartempty = true;
@@ -629,6 +754,14 @@ var CartComponent = /** @class */ (function () {
             toastr.warning("you are not logged in");
         }
     }
+    CartComponent.prototype.ngDoCheck = function () {
+        var _this = this;
+        this.totalprice = 0;
+        this.commonservice.cartitems.forEach(function (each) {
+            console.log(each, ">>>>>>>");
+            _this.totalprice = _this.totalprice + each.price;
+        });
+    };
     CartComponent.prototype.ngOnInit = function () {
     };
     CartComponent.prototype.remove = function (item) {
@@ -647,7 +780,7 @@ var CartComponent = /** @class */ (function () {
                 _this.totalprice = _this.totalprice - item.price;
             }
             else {
-                _this.toastr.error("Error in deleting");
+                _this.toastr.error(response['error']);
             }
         }, function (error) {
             _this.toastr.error("Internal server error");
@@ -655,6 +788,7 @@ var CartComponent = /** @class */ (function () {
     };
     CartComponent.prototype.checkout = function () {
         localStorage.totalprice = this.totalprice;
+        this.router.navigate(['/checkout']);
     };
     CartComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -695,19 +829,96 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _common_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../common.service */ "./src/app/common.service.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
 
 
 
+
+
+
+var cartapiurl = "/api/cartitems";
+var createorderapi = "/api/addorder";
+//var cartapiurl = "http://localhost:7000/api/cartitems"
+//var createorderapi= "http://localhost:7000/api/addorder"
 var CheckoutComponent = /** @class */ (function () {
-    function CheckoutComponent(currentroute) {
+    function CheckoutComponent(currentroute, commonservice, http, router, toastr) {
+        var _this = this;
         this.currentroute = currentroute;
+        this.commonservice = commonservice;
+        this.http = http;
+        this.router = router;
+        this.toastr = toastr;
         this.phone = '';
-        this.phone2 = '';
-        this.address = "";
+        this.name = "";
+        this.area = "";
+        this.city = "";
+        this.street = "";
         this.totalprice = "";
-        if (localStorage.totalprice)
-            this.totalprice = localStorage.totalprice;
+        this.pincode = "";
+        this.modeofpayment = "";
+        if (localStorage.email) {
+            if (commonservice.cartitems.length > 0) {
+                this.cartitems = commonservice.cartitems;
+            }
+            else {
+                http.post(cartapiurl, { email: localStorage.email }).subscribe(function (response) {
+                    if (response['code'] = 200) {
+                        _this.cartitems = response['cartitems'];
+                        commonservice.cartitems = response['cartitems'];
+                    }
+                }, function (error) {
+                    console.log('error in getting product');
+                });
+            }
+            if (this.cartitems.length <= 0) {
+                router.navigate(['/']);
+                toastr.warning("your cart is empty");
+            }
+            if (localStorage.totalprice) {
+                this.totalprice = localStorage.totalprice;
+            }
+        }
+        else {
+            router.navigate['/login'];
+            toastr.warning("you are not logged in");
+        }
     }
+    CheckoutComponent.prototype.placeorder = function () {
+        var _this = this;
+        var requestob = {
+            items: this.cartitems,
+            email: localStorage.email,
+            name: this.name,
+            phone: this.phone,
+            area: this.area,
+            city: this.city,
+            street: this.street,
+            pincode: this.pincode,
+            totalprice: this.totalprice,
+            modeofpayment: this.modeofpayment
+        };
+        console.log("request objeect for order", requestob);
+        this.http.post(createorderapi, requestob)
+            .subscribe(function (response) {
+            console.log("response from create order api", response);
+            if (response["code"] == 200) {
+                console.log("order placed");
+                _this.toastr.success(response["msg"]);
+                _this.commonservice.cartitems = [];
+                console.log(response);
+                var url = "/ordersucess/" + response["order"]['oid'];
+                _this.router.navigate([url]);
+            }
+            else {
+                _this.toastr.error(response['error']);
+            }
+        }, function (error) {
+            _this.toastr.error("Internal Server error");
+            console.log("error from create order api", error);
+        });
+    };
     CheckoutComponent.prototype.ngOnInit = function () {
     };
     CheckoutComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -716,7 +927,7 @@ var CheckoutComponent = /** @class */ (function () {
             template: __webpack_require__(/*! raw-loader!./checkout.component.html */ "./node_modules/raw-loader/index.js!./src/app/checkout/checkout.component.html"),
             styles: [__webpack_require__(/*! ./checkout.component.css */ "./src/app/checkout/checkout.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"], _common_service__WEBPACK_IMPORTED_MODULE_3__["CommonService"], _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], ngx_toastr__WEBPACK_IMPORTED_MODULE_5__["ToastrService"]])
     ], CheckoutComponent);
     return CheckoutComponent;
 }());
@@ -743,6 +954,7 @@ var CommonService = /** @class */ (function () {
     function CommonService() {
         this.products = null;
         this.cartitems = [];
+        this.totalprice = null;
     }
     CommonService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
@@ -878,6 +1090,39 @@ var DeleteAccountComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/discount.pipe.ts":
+/*!**********************************!*\
+  !*** ./src/app/discount.pipe.ts ***!
+  \**********************************/
+/*! exports provided: DiscountPipe */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DiscountPipe", function() { return DiscountPipe; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var DiscountPipe = /** @class */ (function () {
+    function DiscountPipe() {
+    }
+    DiscountPipe.prototype.transform = function (value, args) {
+        console.log("value is");
+        return null;
+    };
+    DiscountPipe = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Pipe"])({
+            name: 'discount'
+        })
+    ], DiscountPipe);
+    return DiscountPipe;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/forgotpassword/forgotpassword.component.css":
 /*!*************************************************************!*\
   !*** ./src/app/forgotpassword/forgotpassword.component.css ***!
@@ -903,6 +1148,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+
 
 
 
@@ -910,10 +1157,14 @@ __webpack_require__.r(__webpack_exports__);
 var apiurl = '/api/forgotpassword';
 //var apiurl="http://localhost:7000/api/forgotpassword"
 var ForgotpasswordComponent = /** @class */ (function () {
-    function ForgotpasswordComponent(http, toastr) {
+    function ForgotpasswordComponent(http, toastr, route) {
         this.http = http;
         this.toastr = toastr;
+        this.route = route;
         this.email = "";
+        if (localStorage.email) {
+            route.navigate(['/']);
+        }
     }
     ForgotpasswordComponent.prototype.ngOnInit = function () {
     };
@@ -935,7 +1186,7 @@ var ForgotpasswordComponent = /** @class */ (function () {
             template: __webpack_require__(/*! raw-loader!./forgotpassword.component.html */ "./node_modules/raw-loader/index.js!./src/app/forgotpassword/forgotpassword.component.html"),
             styles: [__webpack_require__(/*! ./forgotpassword.component.css */ "./src/app/forgotpassword/forgotpassword.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"], ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"], ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]])
     ], ForgotpasswordComponent);
     return ForgotpasswordComponent;
 }());
@@ -969,6 +1220,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var _common_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../common.service */ "./src/app/common.service.ts");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+
 
 
 
@@ -976,18 +1229,28 @@ __webpack_require__.r(__webpack_exports__);
 var apiurl = '/api/allproducts';
 //var apiurl='http://localhost:7000/api/allproducts'
 var HomecomponentComponent = /** @class */ (function () {
-    function HomecomponentComponent(http, commonservice) {
+    function HomecomponentComponent(http, commonservice, toastr) {
         var _this = this;
         this.http = http;
         this.commonservice = commonservice;
+        this.toastr = toastr;
         this.products = [];
-        this.http.get(apiurl).subscribe(function (response) {
-            console.log(response['products']);
-            _this.products = response['products'];
-            _this.commonservice.products = response['products'];
-        }, function (error) {
-            console.log("error in finding details", error);
-        });
+        if (commonservice.products) {
+            this.products = commonservice.products;
+        }
+        else {
+            http.get(apiurl).subscribe(function (response) {
+                if (response["error"]) {
+                    toastr.error(response["error"]);
+                }
+                else {
+                    _this.products = response["products"];
+                    commonservice.products = response["products"];
+                }
+            }, function (error) {
+                console.log("error in product finding", error);
+            });
+        }
     }
     HomecomponentComponent.prototype.ngOnInit = function () {
     };
@@ -997,7 +1260,7 @@ var HomecomponentComponent = /** @class */ (function () {
             template: __webpack_require__(/*! raw-loader!./homecomponent.component.html */ "./node_modules/raw-loader/index.js!./src/app/homecomponent/homecomponent.component.html"),
             styles: [__webpack_require__(/*! ./homecomponent.component.css */ "./src/app/homecomponent/homecomponent.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"], _common_service__WEBPACK_IMPORTED_MODULE_3__["CommonService"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"], _common_service__WEBPACK_IMPORTED_MODULE_3__["CommonService"], ngx_toastr__WEBPACK_IMPORTED_MODULE_4__["ToastrService"]])
     ], HomecomponentComponent);
     return HomecomponentComponent;
 }());
@@ -1046,6 +1309,9 @@ var LoginComponent = /** @class */ (function () {
         this.router = router;
         this.email = '';
         this.password = '';
+        if (localStorage.email) {
+            router.navigate(['/']);
+        }
     }
     LoginComponent.prototype.ngOnInit = function () {
     };
@@ -1142,6 +1408,157 @@ var NavbarComponent = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
     ], NavbarComponent);
     return NavbarComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/orders/orders.component.css":
+/*!*********************************************!*\
+  !*** ./src/app/orders/orders.component.css ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL29yZGVycy9vcmRlcnMuY29tcG9uZW50LmNzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/orders/orders.component.ts":
+/*!********************************************!*\
+  !*** ./src/app/orders/orders.component.ts ***!
+  \********************************************/
+/*! exports provided: OrdersComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OrdersComponent", function() { return OrdersComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+
+
+
+
+
+var ordersapiurl = "/api/orders";
+//const ordersapiurl="http://localhost:7000/api/orders"
+var OrdersComponent = /** @class */ (function () {
+    function OrdersComponent(http, router, toastr) {
+        var _this = this;
+        this.http = http;
+        this.router = router;
+        this.toastr = toastr;
+        if (!localStorage.email) {
+            router.navigate(['/']);
+        }
+        else {
+            http.post(ordersapiurl, { email: localStorage.email }).subscribe(function (response) {
+                if (response["code"] == 200) {
+                    _this.orders = response["orders"];
+                }
+                else {
+                    toastr.error(response["error"]);
+                }
+            }, function (error) {
+                console.log(error);
+            });
+        }
+    }
+    OrdersComponent.prototype.ngOnInit = function () {
+    };
+    OrdersComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-orders',
+            template: __webpack_require__(/*! raw-loader!./orders.component.html */ "./node_modules/raw-loader/index.js!./src/app/orders/orders.component.html"),
+            styles: [__webpack_require__(/*! ./orders.component.css */ "./src/app/orders/orders.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"], ngx_toastr__WEBPACK_IMPORTED_MODULE_4__["ToastrService"]])
+    ], OrdersComponent);
+    return OrdersComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/ordersucess/ordersucess.component.css":
+/*!*******************************************************!*\
+  !*** ./src/app/ordersucess/ordersucess.component.css ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL29yZGVyc3VjZXNzL29yZGVyc3VjZXNzLmNvbXBvbmVudC5jc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/ordersucess/ordersucess.component.ts":
+/*!******************************************************!*\
+  !*** ./src/app/ordersucess/ordersucess.component.ts ***!
+  \******************************************************/
+/*! exports provided: OrdersucessComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OrdersucessComponent", function() { return OrdersucessComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+
+
+
+
+
+var getorderapiurl = "/api/getorder";
+//var getorderapiurl="http://localhost:7000/api/getorder"
+var OrdersucessComponent = /** @class */ (function () {
+    function OrdersucessComponent(currentroute, http, router, toastr) {
+        var _this = this;
+        this.currentroute = currentroute;
+        this.http = http;
+        this.router = router;
+        this.toastr = toastr;
+        if (!localStorage.email) {
+            router.navigate(['/']);
+        }
+        var oid = currentroute.snapshot.params.oid;
+        if (oid) {
+            http.post(getorderapiurl, { oid: oid }).subscribe(function (response) {
+                if (response["code"] == 200) {
+                    console.log(response["order"]);
+                    _this.order = response["order"];
+                }
+                else {
+                    toastr.error(response["error"]);
+                }
+            }, function (error) {
+                toastr.error("internal server error");
+                console.log(error);
+            });
+        }
+        else {
+            router.navigate(["/"]);
+        }
+    }
+    OrdersucessComponent.prototype.ngOnInit = function () {
+    };
+    OrdersucessComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-ordersucess',
+            template: __webpack_require__(/*! raw-loader!./ordersucess.component.html */ "./node_modules/raw-loader/index.js!./src/app/ordersucess/ordersucess.component.html"),
+            styles: [__webpack_require__(/*! ./ordersucess.component.css */ "./src/app/ordersucess/ordersucess.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"], _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], ngx_toastr__WEBPACK_IMPORTED_MODULE_4__["ToastrService"]])
+    ], OrdersucessComponent);
+    return OrdersucessComponent;
 }());
 
 
@@ -1246,6 +1663,8 @@ __webpack_require__.r(__webpack_exports__);
 
 //var addtocartapiurl="http://localhost:7000/api/addtocart"
 var addtocartapiurl = "/api/addtocart";
+//var cartitemsapiurl="http://localhost:7000/api/cartitems"
+var cartitemsapiurl = "/api/cartitems";
 var ProductdetailsComponent = /** @class */ (function () {
     function ProductdetailsComponent(http, currentroute, toastr, router, commonservice) {
         var _this = this;
@@ -1258,24 +1677,50 @@ var ProductdetailsComponent = /** @class */ (function () {
         this.productalreadyincart = false;
         console.log("current route ki details", this.currentroute.snapshot);
         var productid = this.currentroute.snapshot.params.id;
-        // var apiurl = "http://localhost:7000/api/product/"+ productid
+        //var apiurl = "http://localhost:7000/api/product/"+ productid
         var apiurl = "/api/product/" + productid;
-        this.http.get(apiurl).subscribe(function (response) {
-            console.log("response from get product api", response);
-            _this.product = response["data"];
-            _this.commonservice.cartitems.forEach(function (each) {
-                if (each.pid == _this.product["pid"]) {
-                    _this.productalreadyincart = true;
+        http.get(apiurl).subscribe(function (response) {
+            if (response["code"] == 200) {
+                console.log(response["data"]);
+                _this.product = response["data"];
+                if (commonservice.cartitems.length > 0) {
+                    commonservice.cartitems.forEach(function (each) {
+                        console.log(each.pid);
+                        if (each.pid == _this.product["pid"]) {
+                            _this.productalreadyincart = true;
+                        }
+                    });
                 }
-            });
+                else {
+                    http.post(cartitemsapiurl, { email: localStorage.email }).subscribe(function (response) {
+                        if (response["code"] == 200) {
+                            response["cartitems"].forEach(function (each) {
+                                if (each.pid == _this.product["pid"]) {
+                                    _this.productalreadyincart = true;
+                                }
+                            });
+                        }
+                        else {
+                            console.log("error in getting cart items from cart");
+                        }
+                    }, function (error) {
+                        console.log("error", error);
+                    });
+                }
+            }
+            else {
+                toastr.error(response["error"]);
+            }
         }, function (error) {
-            console.log("error in getting product detail", error);
+            console.log("error in showing product", error);
+            toastr.error("error in showing product");
         });
     }
     ProductdetailsComponent.prototype.ngOnInit = function () {
     };
-    ProductdetailsComponent.prototype.addtocart = function () {
+    ProductdetailsComponent.prototype.addtocart = function (movetocart) {
         var _this = this;
+        this.productalreadyincart = true;
         if (localStorage.email) {
             var cart = {
                 email: localStorage.email,
@@ -1287,8 +1732,10 @@ var ProductdetailsComponent = /** @class */ (function () {
             this.http.post(addtocartapiurl, cart).subscribe(function (response) {
                 if (response['code'] == 200) {
                     _this.toastr.success("Added to cart");
-                    _this.productalreadyincart = true;
                     _this.commonservice.cartitems.push(response["cartitem"]);
+                    if (movetocart) {
+                        _this.router.navigate(['/cart']);
+                    }
                 }
                 else {
                     _this.toastr.error("Error in adding", response['error']);
@@ -1304,9 +1751,11 @@ var ProductdetailsComponent = /** @class */ (function () {
     ProductdetailsComponent.prototype.buynow = function () {
         if (localStorage.email) {
             if (!this.productalreadyincart) {
-                this.addtocart();
+                this.addtocart(true);
             }
-            this.router.navigate(['/cart']);
+            else {
+                this.router.navigate(['/cart']);
+            }
         }
         else {
             this.router.navigate(['/login']);
@@ -1370,6 +1819,9 @@ var SignupComponent = /** @class */ (function () {
         this.phone = '';
         this.password = '';
         this.dob = '';
+        if (localStorage.email) {
+            router.navigate(['/']);
+        }
     }
     SignupComponent.prototype.ngOnInit = function () {
     };

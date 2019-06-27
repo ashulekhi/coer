@@ -5,7 +5,7 @@ var cartSchema= new Schema({
     email:{type:String,required:true},
     pname:{type:String,require:true},
     image:{type:String,required:true},
-    qunatity:{type:Number,default:1},
+    quantity:{type:Number,default:1},
     price:{type:Number,required:true},
     pid:{type:Number,required:true}
 })
